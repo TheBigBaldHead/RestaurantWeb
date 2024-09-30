@@ -3,21 +3,20 @@ from django.db import models
 class Customer(models.Model):
     GENDER_MALE = 'M'
     GENDER_FEMALE = 'F'
-    
     MEMBERSHIP_BRONZE = 'B'
     MEMBERSHIP_SILVER = 'S'
     MEMBERSHIP_GOLD = 'G'
 
     MEMBERSHIP_CHOICES = [
-            (MEMBERSHIP_BRONZE, 'Bronze'),
-            (MEMBERSHIP_SILVER, 'Silver'),
-            (MEMBERSHIP_GOLD , 'Gold')
+        (MEMBERSHIP_BRONZE, 'Bronze'),
+        (MEMBERSHIP_SILVER, 'Silver'),
+        (MEMBERSHIP_GOLD , 'Gold')
     ]
-    
     GENDER_CHOICES = [
         (GENDER_MALE, 'Male'),
         (GENDER_FEMALE, 'Female')
     ]
+    
     username = models.CharField(max_length=255, primary_key=True, editable=False)
     first_name = models.CharField(max_length=255, null=False, editable=False)
     last_name = models.CharField(max_length=255, null=False, editable=False)
