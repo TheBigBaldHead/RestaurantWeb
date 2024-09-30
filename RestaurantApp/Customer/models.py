@@ -1,6 +1,6 @@
 from django.db import models
 
-class Customer(model.Models):
+class Customer(models.Model):
     GENDER_MALE = 'M'
     GENDER_FEMALE = 'F'
     
@@ -25,4 +25,4 @@ class Customer(model.Models):
     email = models.EmailField(max_length=255, null=False, editable=True)
     address = models.CharField(max_length=255, null=True, editable=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True, editable=False)
-    membership = model.CharField(max_length=1, choices=MEMBERSHIP_CHOICES, null=False, editable=True)
+    membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICES, null=False, editable=True)
