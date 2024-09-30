@@ -24,4 +24,5 @@ class Customer(models.Model):
     email = models.EmailField(max_length=255, null=False, editable=True)
     address = models.CharField(max_length=255, null=True, editable=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True, editable=False)
-    membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICES, null=False, editable=True)
+    membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICES, null=False)
+    membership = models.ForeignKey() # TODO: make a dynamic type for it with Membership in Restaurant
